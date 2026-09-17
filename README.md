@@ -1,6 +1,6 @@
 # irwhois
 
-![irwhois — Fast .ir Domain Availability Checker](https://raw.githubusercontent.com/Omidsp79/irwhois/main/docs/banner.jpg)
+![irwhois — Fast .ir Domain Availability Checker](https://cdn.jsdelivr.net/gh/Omidsp79/irwhois@main/docs/banner.jpg)
 
 Check **.ir domain availability** with live queries to `whois.nic.ir` — single or batch, from the terminal or a web UI.
 
@@ -11,12 +11,12 @@ Check **.ir domain availability** with live queries to `whois.nic.ir` — single
 - ✅ Robust detection: HTTP first, port-43 whois fallback, `Bad query` and minimum-length rules handled
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Omidsp79/irwhois/main/docs/icons/icon-free.png" width="80" alt="Available"> &nbsp;&nbsp;
-  <img src="https://raw.githubusercontent.com/Omidsp79/irwhois/main/docs/icons/icon-batch.png" width="80" alt="Batch checks"> &nbsp;&nbsp;
-  <img src="https://raw.githubusercontent.com/Omidsp79/irwhois/main/docs/icons/icon-csv.png" width="80" alt="CSV export"> &nbsp;&nbsp;
-  <img src="https://raw.githubusercontent.com/Omidsp79/irwhois/main/docs/icons/icon-cli.png" width="80" alt="CLI"> &nbsp;&nbsp;
-  <img src="https://raw.githubusercontent.com/Omidsp79/irwhois/main/docs/icons/icon-reserved.png" width="80" alt="Reserved detection"> &nbsp;&nbsp;
-  <img src="https://raw.githubusercontent.com/Omidsp79/irwhois/main/docs/icons/icon-web.png" width="80" alt="Persian RTL web UI">
+  <img src="https://cdn.jsdelivr.net/gh/Omidsp79/irwhois@main/docs/icons/icon-free.png" width="80" alt="Available"> &nbsp;&nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/Omidsp79/irwhois@main/docs/icons/icon-batch.png" width="80" alt="Batch checks"> &nbsp;&nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/Omidsp79/irwhois@main/docs/icons/icon-csv.png" width="80" alt="CSV export"> &nbsp;&nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/Omidsp79/irwhois@main/docs/icons/icon-cli.png" width="80" alt="CLI"> &nbsp;&nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/Omidsp79/irwhois@main/docs/icons/icon-reserved.png" width="80" alt="Reserved detection"> &nbsp;&nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/Omidsp79/irwhois@main/docs/icons/icon-web.png" width="80" alt="Persian RTL web UI">
 </p>
 <p align="center"><em>Available · Batch · CSV export · CLI · Reserved detection · Persian web UI</em></p>
 
