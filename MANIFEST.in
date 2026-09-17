@@ -1,0 +1,4 @@
+graft tests
+include domains_sample.txt
+global-exclude __pycache__ *.py[cod]
+prune irwhois.egg-info
