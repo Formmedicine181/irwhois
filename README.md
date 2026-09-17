@@ -49,10 +49,7 @@ pip uninstall irwhois    # remove
 ```
 
 > The project page with release history is at https://pypi.org/project/irwhois/
-> Also mirrored on GitHub Packages (see this repo's Packages section). To install
-> from there, add to `~/.pip/pip.conf` (or `PIP_INDEX_URL` env):
-> `[global]\nextra-index-url = https://YOUR_GITHUB_USERNAME:YOUR_TOKEN@pypi.pkg.github.com/Omidsp79/simple/`
-> then `pip install irwhois`.
+> Every GitHub Release also ships the sdist + wheel as downloadable assets.
 
 **Option 2 — via npm (Node.js users, no pip needed):**
 
