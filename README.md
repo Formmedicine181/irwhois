@@ -22,7 +22,39 @@ Check **.ir domain availability** with live queries to `whois.nic.ir` — single
 
 ## Install
 
+**Requirements:** Python 3.8 or newer, no other dependencies. Works on Linux, macOS and Windows.
+
+**Option 1 — from PyPI (recommended):**
+
 ```bash
+pip install irwhois
+```
+
+This installs two things:
+1. The `irwhois` command — available anywhere in your terminal (single/batch checks, interactive mode, web UI).
+2. The `irwhois` Python library — `from irwhois import check_domain, batch_check` in your own code.
+
+Verify the installation:
+
+```bash
+irwhois --version        # prints e.g. irwhois 1.0.0
+irwhois example.ir       # first live check
+```
+
+Upgrade to the newest release / uninstall:
+
+```bash
+pip install -U irwhois   # upgrade
+pip uninstall irwhois    # remove
+```
+
+> The project page with release history is at https://pypi.org/project/irwhois/
+
+**Option 2 — from source (developers):**
+
+```bash
+git clone https://github.com/Omidsp79/nic-extract.git
+cd nic-extract
 pip install .
 # then use the `irwhois` command from anywhere
 ```
@@ -112,6 +144,42 @@ Dependency rules: `core` depends on nothing UI-related, `web` depends only on `c
 **irwhois** یک ابزار رایگان و متن‌باز برای **استعلام دامنه ir** و **بررسی آزاد بودن دامنه‌های آی‌آر** است. این برنامه مستقیماً به سامانه **whois ایرنیک** (`whois.nic.ir`) وصل می‌شود و در چند ثانیه مشخص می‌کند دامنه موردنظر شما **آزاد و قابل ثبت** است یا قبلاً **ثبت و اشغال** شده است.
 
 ورودی می‌تواند دامنه (`example.ir`)، لینک سایت (`https://myshop.ir`) یا لینک whois (`https://whois.nic.ir/WHOIS?name=myshop.ir`) باشد؛ هم تکی و هم گروهی پشتیبانی می‌شود. برای استفاده راحت، `irwhois --web` را اجرا کنید و در مرورگر `http://127.0.0.1:8000` را باز کنید.
+
+### نصب برنامه (قدم‌به‌قدم)
+
+**پیش‌نیاز:** پایتون ۳.۸ یا جدیدتر. برای بررسی نسخه پایتون:
+
+```bash
+python3 --version
+```
+
+**روش اول — نصب با pip (پیشنهادی):**
+
+```bash
+pip install irwhois
+```
+
+با این یک دستور، هم دستور `irwhois` در ترمینال فعال می‌شود و هم کتابخانه پایتون آن نصب می‌شود. برای اطمینان از نصب:
+
+```bash
+irwhois --version
+irwhois example.ir
+```
+
+برای به‌روزرسانی به نسخه جدید یا حذف برنامه:
+
+```bash
+pip install -U irwhois   # به‌روزرسانی
+pip uninstall irwhois    # حذف
+```
+
+**روش دوم — اجرا بدون نصب (از سورس):**
+
+```bash
+git clone https://github.com/Omidsp79/nic-extract.git
+cd nic-extract
+python -m irwhois example.ir
+```
 
 ### این ابزار چه کار می‌کند؟
 
