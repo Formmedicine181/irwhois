@@ -50,7 +50,19 @@ pip uninstall irwhois    # remove
 
 > The project page with release history is at https://pypi.org/project/irwhois/
 
-**Option 2 — from source (developers):**
+**Option 2 — via npm (Node.js users, no pip needed):**
+
+Requires Node.js 18+ and Python 3.8+ on PATH. The npm package bundles the same Python code, so no `pip install` is required:
+
+```bash
+npx -y irwhois example.ir     # run without installing
+npm i -g irwhois              # or install globally, then:
+irwhois example.ir
+```
+
+> Package page: https://www.npmjs.com/package/irwhois
+
+**Option 3 — from source (developers):**
 
 ```bash
 git clone https://github.com/Omidsp79/nic-extract.git
@@ -171,6 +183,14 @@ irwhois example.ir
 ```bash
 pip install -U irwhois   # به‌روزرسانی
 pip uninstall irwhois    # حذف
+```
+
+**نصب با npm (برای کاربران Node.js — بدون نیاز به pip):**
+به Node.js نسخه ۱۸ به بالا و پایتون ۳.۸ به بالا نیاز دارید:
+
+```bash
+npx -y irwhois example.ir   # اجرا بدون نصب
+npm i -g irwhois            # یا نصب سراسری، بعد: irwhois example.ir
 ```
 
 **روش دوم — اجرا بدون نصب (از سورس):**
