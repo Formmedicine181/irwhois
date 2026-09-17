@@ -1,6 +1,6 @@
 # irwhois
 
-![irwhois — Fast .ir Domain Availability Checker](docs/banner.png)
+![irwhois — Fast .ir Domain Availability Checker](docs/banner.jpg)
 
 Check **.ir domain availability** with live queries to `whois.nic.ir` — single or batch, from the terminal or a web UI.
 
@@ -9,6 +9,16 @@ Check **.ir domain availability** with live queries to `whois.nic.ir` — single
 - ✅ Single + batch checks (txt/csv files, pipes, web UI)
 - ✅ Persian (RTL) web UI with CSV export
 - ✅ Robust detection: HTTP first, port-43 whois fallback, `Bad query` and minimum-length rules handled
+
+<p align="center">
+  <img src="docs/icons/icon-free.png" width="80" alt="Available"> &nbsp;&nbsp;
+  <img src="docs/icons/icon-batch.png" width="80" alt="Batch checks"> &nbsp;&nbsp;
+  <img src="docs/icons/icon-csv.png" width="80" alt="CSV export"> &nbsp;&nbsp;
+  <img src="docs/icons/icon-cli.png" width="80" alt="CLI"> &nbsp;&nbsp;
+  <img src="docs/icons/icon-reserved.png" width="80" alt="Reserved detection"> &nbsp;&nbsp;
+  <img src="docs/icons/icon-web.png" width="80" alt="Persian RTL web UI">
+</p>
+<p align="center"><em>Available · Batch · CSV export · CLI · Reserved detection · Persian web UI</em></p>
 
 ## Install
 
