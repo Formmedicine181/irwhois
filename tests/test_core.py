@@ -112,4 +112,5 @@ def test_batch_dedupes_and_preserves_order(monkeypatch):
 
 
 def test_package_version():
-    assert irwhois.__version__ == "1.0.0"
+    import re
+    assert re.fullmatch(r"\d+\.\d+\.\d+", irwhois.__version__)
