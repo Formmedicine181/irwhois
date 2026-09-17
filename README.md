@@ -61,6 +61,10 @@ irwhois example.ir
 ```
 
 > Package page: https://www.npmjs.com/package/irwhois
+> Also on GitHub Packages as `@omidsp79/irwhois` (shown in this repo's Packages section).
+> Note: GitHub Packages requires authentication even for public packages —
+> add `//npm.pkg.github.com/:_authToken=YOUR_TOKEN` to `~/.npmrc`, then:
+> `npm i @omidsp79/irwhois --registry=https://npm.pkg.github.com`
 
 **Option 3 — via Homebrew (macOS):**
 
