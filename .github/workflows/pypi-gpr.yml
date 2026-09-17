@@ -1,0 +1,40 @@
+# Publish the Python package to GitHub Packages (shows up in the repo's
+# "Packages" section alongside the npm package).
+#
+# Triggers: push a tag like `pypi-v1.0.2`, or run manually from the Actions tab.
+# No secrets needed: uses the automatic GITHUB_TOKEN (packages: write).
+name: Publish Python (GitHub Packages)
+
+on:
+  push:
+    tags: ["pypi-v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  publish-gpr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build
+        run: |
+          pip install build
+          python -m build
+
+      - name: Publish to GitHub Packages
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://upload.pypi.pkg.github.com/Omidsp79/
+          user: __token__
+          password: ${{ secrets.GITHUB_TOKEN }}
+          skip-existing: true

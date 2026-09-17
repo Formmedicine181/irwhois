@@ -37,7 +37,7 @@ This installs two things:
 Verify the installation:
 
 ```bash
-irwhois --version        # prints e.g. irwhois 1.0.0
+irwhois --version        # prints e.g. irwhois 1.0.2
 irwhois example.ir       # first live check
 ```
 
@@ -49,6 +49,10 @@ pip uninstall irwhois    # remove
 ```
 
 > The project page with release history is at https://pypi.org/project/irwhois/
+> Also mirrored on GitHub Packages (see this repo's Packages section). To install
+> from there, add to `~/.pip/pip.conf` (or `PIP_INDEX_URL` env):
+> `[global]\nextra-index-url = https://YOUR_GITHUB_USERNAME:YOUR_TOKEN@pypi.pkg.github.com/Omidsp79/simple/`
+> then `pip install irwhois`.
 
 **Option 2 — via npm (Node.js users, no pip needed):**
 
