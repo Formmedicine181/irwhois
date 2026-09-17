@@ -1,6 +1,6 @@
 # irwhois
 
-![irwhois — Fast .ir Domain Availability Checker](https://raw.githubusercontent.com/Omidsp79/nic-extract/main/docs/banner.jpg)
+![irwhois — Fast .ir Domain Availability Checker](https://raw.githubusercontent.com/Omidsp79/irwhois/main/docs/banner.jpg)
 
 Check **.ir domain availability** with live queries to `whois.nic.ir` — single or batch, from the terminal or a web UI.
 
@@ -11,12 +11,12 @@ Check **.ir domain availability** with live queries to `whois.nic.ir` — single
 - ✅ Robust detection: HTTP first, port-43 whois fallback, `Bad query` and minimum-length rules handled
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Omidsp79/nic-extract/main/docs/icons/icon-free.png" width="80" alt="Available"> &nbsp;&nbsp;
-  <img src="https://raw.githubusercontent.com/Omidsp79/nic-extract/main/docs/icons/icon-batch.png" width="80" alt="Batch checks"> &nbsp;&nbsp;
-  <img src="https://raw.githubusercontent.com/Omidsp79/nic-extract/main/docs/icons/icon-csv.png" width="80" alt="CSV export"> &nbsp;&nbsp;
-  <img src="https://raw.githubusercontent.com/Omidsp79/nic-extract/main/docs/icons/icon-cli.png" width="80" alt="CLI"> &nbsp;&nbsp;
-  <img src="https://raw.githubusercontent.com/Omidsp79/nic-extract/main/docs/icons/icon-reserved.png" width="80" alt="Reserved detection"> &nbsp;&nbsp;
-  <img src="https://raw.githubusercontent.com/Omidsp79/nic-extract/main/docs/icons/icon-web.png" width="80" alt="Persian RTL web UI">
+  <img src="https://raw.githubusercontent.com/Omidsp79/irwhois/main/docs/icons/icon-free.png" width="80" alt="Available"> &nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/Omidsp79/irwhois/main/docs/icons/icon-batch.png" width="80" alt="Batch checks"> &nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/Omidsp79/irwhois/main/docs/icons/icon-csv.png" width="80" alt="CSV export"> &nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/Omidsp79/irwhois/main/docs/icons/icon-cli.png" width="80" alt="CLI"> &nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/Omidsp79/irwhois/main/docs/icons/icon-reserved.png" width="80" alt="Reserved detection"> &nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/Omidsp79/irwhois/main/docs/icons/icon-web.png" width="80" alt="Persian RTL web UI">
 </p>
 <p align="center"><em>Available · Batch · CSV export · CLI · Reserved detection · Persian web UI</em></p>
 
@@ -65,8 +65,8 @@ irwhois example.ir
 **Option 3 — from source (developers):**
 
 ```bash
-git clone https://github.com/Omidsp79/nic-extract.git
-cd nic-extract
+git clone https://github.com/Omidsp79/irwhois.git
+cd irwhois
 pip install .
 # then use the `irwhois` command from anywhere
 ```
@@ -196,8 +196,8 @@ npm i -g irwhois            # یا نصب سراسری، بعد: irwhois example
 **روش دوم — اجرا بدون نصب (از سورس):**
 
 ```bash
-git clone https://github.com/Omidsp79/nic-extract.git
-cd nic-extract
+git clone https://github.com/Omidsp79/irwhois.git
+cd irwhois
 python -m irwhois example.ir
 ```
 

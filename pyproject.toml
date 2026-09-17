@@ -11,7 +11,7 @@ requires-python = ">=3.8"
 license = { text = "MIT" }
 authors = [{ name = "omidsp79", email = "cashomid@gmail.com" }]
 keywords = ["whois", "ir", "domain", "irnic", "nic.ir", "availability"]
-urls = { Homepage = "https://github.com/Omidsp79/nic-extract", Repository = "https://github.com/Omidsp79/nic-extract" }
+urls = { Homepage = "https://github.com/Omidsp79/irwhois", Repository = "https://github.com/Omidsp79/irwhois" }
 classifiers = [
   "Development Status :: 4 - Beta",
   "Environment :: Console",
