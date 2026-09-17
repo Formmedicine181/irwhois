@@ -1,0 +1,13 @@
+.git/
+__pycache__/
+*.py[cod]
+dist/
+build/
+*.egg-info/
+.venv/
+venv/
+tests/
+docs/
+npm/
+domains_sample.txt
+.DS_Store

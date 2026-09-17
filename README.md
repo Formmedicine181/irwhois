@@ -62,7 +62,14 @@ irwhois example.ir
 
 > Package page: https://www.npmjs.com/package/irwhois
 
-**Option 3 — from source (developers):**
+**Option 3 — via Homebrew (macOS):**
+
+```bash
+brew tap omidsp79/tap
+brew install irwhois
+```
+
+**Option 4 — from source (developers):**
 
 ```bash
 git clone https://github.com/Omidsp79/irwhois.git
@@ -108,6 +115,20 @@ print(check_domain("example.ir")["status"])   # taken | free | reserved | ...
 print(batch_check(["a.ir", "b.ir"]))
 ```
 
+## Docker
+
+No Python or Node needed — just Docker:
+
+```bash
+docker run --rm omidsp79/irwhois example.ir
+docker run --rm omidsp79/irwhois -f /data/domains.txt -o /data/out.csv \
+  -v "$PWD":/data
+# Web UI on http://localhost:8000 :
+docker run --rm -p 8000:8000 omidsp79/irwhois --web --host 0.0.0.0 --port 8000
+```
+
+Images are published automatically to [omidsp79/irwhois on Docker Hub](https://hub.docker.com/r/omidsp79/irwhois) on every `v*` release tag. To build locally: `docker build -t irwhois .`
+
 ## How availability is detected
 
 | Server answer | Status |
@@ -134,6 +155,7 @@ Per official [IRNIC domain rules](https://www.nic.ir/Terms_and_Conditions_ir,_Ap
 --method         auto | socket | http (default: auto)
 --show-raw       print raw whois text
 -o / --output    save results to CSV
+--port/--host    web UI port and bind address
 --version        print version
 ```
 
@@ -193,7 +215,20 @@ npx -y irwhois example.ir   # اجرا بدون نصب
 npm i -g irwhois            # یا نصب سراسری، بعد: irwhois example.ir
 ```
 
-**روش دوم — اجرا بدون نصب (از سورس):**
+**نصب با Homebrew (مک):**
+
+```bash
+brew tap omidsp79/tap
+brew install irwhois
+```
+
+**نصب با داکر (بدون نیاز به پایتون و Node):**
+
+```bash
+docker run --rm omidsp79/irwhois example.ir
+```
+
+**روش آخر — اجرا بدون نصب (از سورس):**
 
 ```bash
 git clone https://github.com/Omidsp79/irwhois.git

@@ -198,6 +198,7 @@ def build_parser():
     p.add_argument("-o", "--output", help="save results to CSV")
     p.add_argument("--web", action="store_true", help="launch the Persian web UI")
     p.add_argument("--port", type=int, default=8000, help="web UI port (default: 8000)")
+    p.add_argument("--host", default="127.0.0.1", help="web UI bind address (use 0.0.0.0 inside Docker)")
     p.add_argument("-i", "--interactive", action="store_true", help="Persian interactive mode")
     p.add_argument("-w", "--workers", type=int, default=DEFAULT_WORKERS, help=f"parallel workers (default: {DEFAULT_WORKERS})")
     p.add_argument("--delay", type=float, default=DEFAULT_DELAY, help="delay between queries (seconds)")
@@ -215,7 +216,7 @@ def main(argv=None):
 
     if args.web:
         from irwhois.web import run_web
-        run_web(args.port, args.timeout, args.method, args.workers)
+        run_web(args.port, args.timeout, args.method, args.workers, args.host)
         return
 
     # Collect inputs

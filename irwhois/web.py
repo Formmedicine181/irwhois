@@ -134,17 +134,20 @@ class WebHandler(BaseHTTPRequestHandler):
 
 
 def run_web(port: int = 8000, timeout: int = DEFAULT_TIMEOUT,
-            method: str = "auto", workers: int = DEFAULT_WORKERS):
-    srv = ThreadingHTTPServer(("127.0.0.1", port), WebHandler)
+            method: str = "auto", workers: int = DEFAULT_WORKERS,
+            host: str = "127.0.0.1"):
+    srv = ThreadingHTTPServer((host, port), WebHandler)
     srv.cfg_timeout = timeout
     srv.cfg_method = method
     srv.cfg_workers = workers
-    print(f"🌐 رابط وب فعال شد: http://127.0.0.1:{port}")
+    shown_host = "localhost" if host in ("0.0.0.0", "::") else host
+    print(f"🌐 رابط وب فعال شد: http://{shown_host}:{port}")
     print("برای توقف Ctrl+C را بزنید.\n")
     try:
         import webbrowser
         try:
-            webbrowser.open(f"http://127.0.0.1:{port}")
+            if host in ("127.0.0.1", "localhost"):
+                webbrowser.open(f"http://127.0.0.1:{port}")
         except Exception:
             pass
         srv.serve_forever()
@@ -157,11 +160,12 @@ def run_web(port: int = 8000, timeout: int = DEFAULT_TIMEOUT,
 def main(argv=None):
     p = argparse.ArgumentParser(description="Persian web UI for checking .ir domains")
     p.add_argument("--port", type=int, default=8000, help="port (default: 8000)")
+    p.add_argument("--host", default="127.0.0.1", help="bind address (use 0.0.0.0 inside Docker)")
     p.add_argument("--timeout", type=int, default=DEFAULT_TIMEOUT, help="per-query timeout (seconds)")
     p.add_argument("--method", choices=["auto", "socket", "http"], default="auto")
     p.add_argument("-w", "--workers", type=int, default=DEFAULT_WORKERS)
     args = p.parse_args(argv)
-    run_web(args.port, args.timeout, args.method, args.workers)
+    run_web(args.port, args.timeout, args.method, args.workers, args.host)
 
 
 if __name__ == "__main__":
