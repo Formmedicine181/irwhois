@@ -1,5 +1,7 @@
 # irwhois
 
+![irwhois — Fast .ir Domain Availability Checker](docs/banner.png)
+
 Check **.ir domain availability** with live queries to `whois.nic.ir` — single or batch, from the terminal or a web UI.
 
 - ✅ Zero dependencies (Python 3.8+ standard library only)
