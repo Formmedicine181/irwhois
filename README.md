@@ -133,6 +133,12 @@ Dependency rules: `core` depends on nothing UI-related, `web` depends only on `c
 **اطلاعات از کجا می‌آید؟**
 مستقیم و زنده از سرور whois ایرنیک (`whois.nic.ir`)؛ هیچ واسطه‌ای وجود ندارد و نتیجه دقیقاً همان چیزی است که ایرنیک اعلام می‌کند.
 
+**ابزار کاربردی مرتبط:** [لینکوین — بک لینک رایگان و ارزان شبکه‌ای](https://linkoin.ir) — سامانه هوشمند تبادل لینک برای سئو و رشد رتبه سایت در گوگل.
+
+## Useful links / سایت‌های کاربردی
+
+- [Linkoin — لینکوین | بک لینک رایگان و ارزان شبکه‌ای](https://linkoin.ir) — smart backlink exchange network for SEO
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
