@@ -1,0 +1,36 @@
+{
+  "name": "irwhois",
+  "version": "1.0.1",
+  "description": "Check .ir domain availability via whois.nic.ir — CLI, interactive and web UI (Python-powered, zero npm dependencies)",
+  "license": "MIT",
+  "bin": {
+    "irwhois": "./bin/irwhois.js"
+  },
+  "files": [
+    "bin/",
+    "python/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "prepack": "node scripts/prepare.js",
+    "test": "node bin/irwhois.js --version"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "whois",
+    "ir",
+    "domain",
+    "irnic",
+    "nic.ir",
+    "availability",
+    "cli"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Omidsp79/nic-extract.git"
+  },
+  "homepage": "https://github.com/Omidsp79/nic-extract#readme"
+}

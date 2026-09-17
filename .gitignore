@@ -7,3 +7,9 @@ dist/
 venv/
 .DS_Store
 result*.csv
+# generated npm publish payload (rebuilt by prepack)
+npm/python/
+npm/README.md
+npm/LICENSE
+npm/*.tgz
+npm/.npmrc
