@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>بررسی دامنه .ir | whois.nic.ir</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">WHOIS • .IR Domain Checker</div>
+    <h1>🔍 بررسی آزاد بودن دامنه <span dir="ltr">.ir</span></h1>
+    <p>استعلام زنده از <span dir="ltr">whois.nic.ir</span> • بررسی تکی و گروهی • ورودی: دامنه، لینک سایت و لینک WHOIS</p>
+  </header>
+
+  <div class="card">
+    <h2>۱️⃣ بررسی تکی</h2>
+    <div class="row">
+      <input type="text" id="single" dir="ltr" placeholder="example.ir یا https://whois.nic.ir/WHOIS?name=example.ir" style="flex:1 1 260px; min-width: 240px; text-align: left;">
+      <button class="primary" onclick="checkSingle()">بررسی</button>
+    </div>
+    <div class="hint">مثال: <span dir="ltr">google.ir</span> ، <span dir="ltr">https://myshop.ir</span> ، <span dir="ltr">https://whois.nic.ir/WHOIS?name=myshop.ir</span></div>
+    <div id="singleRes"></div>
+  </div>
+
+  <div class="card">
+    <h2>۲️⃣ بررسی گروهی</h2>
+    <textarea id="batch" dir="ltr" placeholder="هر خط یک دامنه یا لینک&#10;shop1.ir&#10;shop2.ir&#10;https://whois.nic.ir/WHOIS?name=shop3.ir"></textarea>
+
+    <div class="toolbar">
+      <button class="green" onclick="checkBatch()">🚀 بررسی همه</button>
+      <button class="ghost" onclick="clearAll()">پاک کردن</button>
+      <button class="ghost" onclick="downloadCSV()">⬇️ خروجی CSV</button>
+      <button class="ghost" onclick="copyFree()">📋 کپی دامنه‌های آزاد</button>
+      <input type="text" id="filter" placeholder="🔎 جستجو در نتایج..." oninput="render()">
+      <select id="statusFilter" onchange="render()">
+        <option value="">همه وضعیت‌ها</option>
+        <option value="free">فقط آزاد ✅</option>
+        <option value="taken">فقط اشغال ❌</option>
+        <option value="reserved">رزرو/غیرقابل ثبت 🔒</option>
+        <option value="error">خطا/نامعتبر ⚠️</option>
+      </select>
+    </div>
+
+    <div class="drop" onclick="document.getElementById('file').click()">
+      📂 کلیک یا رها کردن فایل <span dir="ltr">.txt / .csv</span> حاوی دامنه‌ها
+      <input type="file" id="file" accept=".txt,.csv" style="display:none" onchange="loadFile(event)">
+    </div>
+
+    <div class="stats">
+      <div class="stat"><span class="label">کل</span><b id="sTotal">0</b></div>
+      <div class="stat" style="color:#7ef4ad;"><span class="label">آزاد ✅</span><b id="sFree">0</b></div>
+      <div class="stat" style="color:#fdb7b7;"><span class="label">اشغال ❌</span><b id="sTaken">0</b></div>
+      <div class="stat" style="color:#f8d57a;"><span class="label">خطا ⚠️</span><b id="sErr">0</b></div>
+    </div>
+
+    <div class="bar"><i id="prog"></i></div>
+
+    <div style="overflow-x:auto;">
+      <table id="tbl" style="display:none;">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>دامنه</th>
+            <th>وضعیت</th>
+            <th>whois</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer>داده‌ها به‌صورت زنده از whois.nic.ir خوانده می‌شوند • برای بررسی گروهی سنگین، فاصله بین درخواست‌ها را بیشتر کنید</footer>
+</div>
+<script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+:root {
+  --bg: #07131f;
+  --bg2: #0f1d2c;
+  --card: rgba(15, 23, 42, 0.82);
+  --card-strong: rgba(17, 31, 45, 0.96);
+  --line: rgba(148, 163, 184, 0.24);
+  --text: #edf6ff;
+  --muted: #a8bbd6;
+  --blue: #5aa9ff;
+  --blue-strong: #2d7fff;
+  --green: #22c55e;
+  --red: #ef4444;
+  --amber: #f59e0b;
+  --cyan: #2dd4bf;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Tahoma, 'Segoe UI', sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top right, rgba(90,169,255,0.16), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(45,212,191,0.14), transparent 25%),
+    linear-gradient(160deg, #07131f, #0f1d2c 55%, #07131f);
+}
+
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 18px 64px;
+}
+
+header {
+  text-align: center;
+  margin: 8px 0 22px;
+}
+
+.eyebrow {
+  display: inline-block;
+  background: rgba(90,169,255,0.12);
+  border: 1px solid rgba(90,169,255,0.28);
+  color: #dcf0ff;
+  padding: 7px 13px;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+
+header h1 {
+  margin: 16px 0 10px;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 2;
+}
+
+.card {
+  background: rgba(15, 23, 42, 0.82);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 20px 18px 18px;
+  margin: 18px 0;
+  box-shadow: 0 18px 40px rgba(2, 6, 23, 0.35);
+  backdrop-filter: blur(8px);
+}
+
+.card h2 {
+  margin: 0 0 14px;
+  font-size: 1.15rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+input[type=text], textarea, select {
+  width: 100%;
+  background: rgba(14, 20, 30, 0.9);
+  border: 1px solid var(--line);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type=text]:focus, textarea:focus, select:focus {
+  border-color: rgba(90,169,255,0.8);
+  box-shadow: 0 0 0 3px rgba(90,169,255,0.12);
+}
+
+textarea {
+  min-height: 130px;
+  resize: vertical;
+  line-height: 1.8;
+}
+
+button {
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.14s ease, filter 0.2s ease, opacity 0.2s ease;
+}
+button:hover { filter: brightness(1.08); }
+button:active { transform: translateY(1px); }
+button:disabled { opacity: 0.55; cursor: wait; }
+
+button.primary {
+  background: linear-gradient(135deg, var(--blue), var(--blue-strong));
+  color: white;
+}
+
+button.green {
+  background: linear-gradient(135deg, #16a34a, var(--green));
+  color: #ecfdf5;
+}
+
+button.ghost {
+  background: rgba(148, 163, 184, 0.05);
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+  align-items: center;
+}
+
+.toolbar input[type=text] {
+  max-width: 240px;
+  flex: 1 1 220px;
+}
+
+.hint {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.drop {
+  margin-top: 12px;
+  border: 1.5px dashed var(--line);
+  background: rgba(148, 163, 184, 0.04);
+  border-radius: 12px;
+  padding: 14px;
+  color: var(--muted);
+  text-align: center;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  gap: 10px;
+  margin: 16px 0 10px;
+}
+
+.stat {
+  background: rgba(148,163,184,0.05);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px 10px;
+  text-align: center;
+}
+
+.stat .label {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.stat b {
+  display: block;
+  font-size: 1.5rem;
+}
+
+.bar {
+  height: 10px;
+  background: rgba(148,163,184,0.12);
+  border-radius: 99px;
+  overflow: hidden;
+  margin-top: 12px;
+}
+
+.bar i {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--blue), var(--cyan));
+  border-radius: inherit;
+  transition: width 0.25s ease;
+}
+
+.badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.free { background: rgba(34,197,94,0.14); color: #7ef4ad; border: 1px solid rgba(34,197,94,0.32); }
+.taken { background: rgba(239,68,68,0.12); color: #fdb7b7; border: 1px solid rgba(239,68,68,0.32); }
+.err { background: rgba(245,158,11,0.12); color: #f8d57a; border: 1px solid rgba(245,158,11,0.24); }
+.res { background: rgba(59,130,246,0.12); color: #abd2ff; border: 1px solid rgba(59,130,246,0.32); }
+
+.result-box {
+  margin-top: 14px;
+  padding: 12px 14px;
+  background: rgba(148, 163, 184, 0.04);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.result-box table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.result-box td {
+  padding: 8px 0;
+  vertical-align: middle;
+}
+
+.result-box td:first-child {
+  text-align: left;
+  font-family: monospace;
+  direction: ltr;
+  font-size: 15px;
+}
+
+.result-box td:nth-child(2), .result-box td:nth-child(3) {
+  text-align: left;
+}
+
+.result-box a {
+  color: #8ed6ff;
+  text-decoration: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+th, td {
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--line);
+  text-align: right;
+  vertical-align: middle;
+}
+
+th {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+thead th:first-child, tbody td:first-child {
+  width: 50px;
+}
+
+tbody td.domain-cell {
+  direction: ltr;
+  text-align: left;
+  font-family: monospace;
+}
+
+tbody a {
+  color: #8ed6ff;
+  text-decoration: none;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 26px;
+  line-height: 2;
+}
+
+@media (max-width: 700px) {
+  .stats { grid-template-columns: repeat(2, minmax(120px, 1fr)); }
+  .toolbar { align-items: stretch; }
+  .toolbar > * { flex: 1 1 100%; }
+}

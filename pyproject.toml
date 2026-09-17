@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "irwhois"
+version = "1.0.0"
+description = "Check .ir domain availability via whois.nic.ir — CLI, interactive and web UI"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "omidsp79", email = "cashomid@gmail.com" }]
+keywords = ["whois", "ir", "domain", "irnic", "nic.ir", "availability"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: End Users/Desktop",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Topic :: Internet :: Name Service (DNS)",
+]
+
+[project.scripts]
+irwhois = "irwhois.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["irwhois*"]
+
+[tool.setuptools.package-data]
+irwhois = ["web/*"]
